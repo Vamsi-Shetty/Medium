@@ -4,4 +4,4 @@ const SignupModal = () => {
   )
 }
 
-export default SignupModal
+export default SignupModal;

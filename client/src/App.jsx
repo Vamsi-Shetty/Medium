@@ -1,4 +1,5 @@
 import './App.css';
+import SignupModal from './components/SignupModal';
 
 function App() {
 
@@ -6,6 +7,7 @@ function App() {
     <>
       <div>
         <h1>App</h1>
+        <SignupModal/>
       </div>
     </>
   )
