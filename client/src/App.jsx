@@ -1,5 +1,5 @@
 import './App.css';
-import SignupModal from './components/SignupModal';
+import SignUp from './pages/SignUp';
 
 function App() {
 
@@ -7,7 +7,7 @@ function App() {
     <>
       <div>
         <h1>App</h1>
-        <SignupModal/>
+        <SignUp/>
       </div>
     </>
   )
