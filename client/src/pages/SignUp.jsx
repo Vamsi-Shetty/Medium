@@ -24,7 +24,7 @@ const SignUp = () => {
   }
 
   return (
-    <div>
+    <div className='rounded-xl bg-slate-700 flex justify-around max-w-fit'>
       <form action="" onSubmit={(e) => {handleSignup(e)}}>
         <label htmlFor="">Full Name</label>
         <input type="text" name="" id="name" placeholder='Enter Full Name' onChange={(e) => {setName(e.target.value)}}/><br />
