@@ -1,39 +1,44 @@
-import { useState } from 'react';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
-
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSignup = (e) => {
-    e.preventDefault();
-
-    axios.post('http://localhost:3000/users', {
-      name:name,
-      email:email,
-      password:password
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
-
   return (
-    <div className='rounded-xl bg-slate-700 flex justify-around max-w-fit'>
-      <form action="" onSubmit={(e) => {handleSignup(e)}}>
-        <label htmlFor="">Full Name</label>
-        <input type="text" name="" id="name" placeholder='Enter Full Name' onChange={(e) => {setName(e.target.value)}}/><br />
-        <label htmlFor="">Email</label>
-        <input type="text" name="" id="name" placeholder='Enter Email' onChange={(e) => {setEmail(e.target.value)}}/><br />
-        <label htmlFor="">Password</label>
-        <input type="text" name="" id="name" placeholder='Enter Password' onChange={(e) => {setPassword(e.target.value)}}/><br />
-        <input type="submit" value="Sign Up"/>
-      </form>
+    <div className='text-center flex flex-col justify-center items-center h-screen md:h-auto'>
+      <div>
+        <h1>Create an account</h1>
+        <h6>
+          Already have an account? {" "}
+          <Link to='/signin' className='underline'>Login</Link>
+        </h6>
+      </div>
+      <div className='text-left'>
+        <form>
+          <label htmlFor="">Name</label><br />
+          <input
+            className='border-2 my-2 p-1 rounded-md'
+            type="text" 
+            placeholder='Enter Name' 
+           />
+           <br />
+          <label htmlFor="">Email</label>
+          <br />
+          <input
+             className='border-2 my-2 p-1 rounded-md'
+             type="text" 
+             placeholder='Enter email'
+             /><br />
+          <label htmlFor="">Password</label>
+          <br />
+          <input
+            className='border-2 my-2 p-1 rounded-md'
+            type="text" 
+            placeholder='Enter Password'
+            />
+          <br />
+          <input
+           className='w-full bg-black text-white p-4 rounded-md flex justify-center items-center gap-4'
+           type="button" value="Signup" />
+        </form>
+      </div>
     </div>
   )
 }
